@@ -4,7 +4,11 @@
  */
 
 exports.view = function(req, res){
-  res.render('index', {
-  	'name': '',
+  var nameToShow = "World";
+  if(req.params.userName != null){
+  nameToShow = req.params.userName;//URL PARAMS
+  }
+  res.render('index', {//RENDER TEMPLATE
+  	'name': nameToShow,
   });
 };
